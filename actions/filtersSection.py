@@ -12,14 +12,21 @@ class FiltersSection:
     def see_more_and_checkbox_button_click(self):
         self.page.wait_for_timeout(1000)
 
-        # 1. Розгортаємо список ("Дивитися більше"), якщо кнопка є
-        if self.see_more_button.is_visible():
-            self.see_more_button.click(force=True)
+        # 1. Розгортаємо "Дивитися більше", якщо кнопка є
+        see_more = self.page.locator('button[data-wwt-id="filter__see-more--button"]').first
+        if see_more.is_visible():
+            see_more.click(force=True)
             self.page.wait_for_timeout(500)
 
-        # 2. Натискаємо на головну кнопку чекбоксу тварин (звертаємося до правильної змінної)
-        self.pets_checkbox_button.wait_for(state="visible", timeout=10000)
-        self.pets_checkbox_button.click(force=True)
+        # 2. Шукаємо чекбокс тварин за атрибутом або текстом
+        pets_btn = self.pets_checkbox_button
+
+        # Якщо за замовчуванням за id="filter-11..." не знайдено, шукаємо за текстом або загальним атрибутом
+        if not pets_btn.is_visible():
+            pets_btn = self.page.locator("button[data-wwt-id*='title--checkbox']").first
+
+        # 3. Клікаємо з force=True
+        pets_btn.click(force=True)
 
     @allure.step('Checking active checkboxes button')
     def active_checkboxes_button_click(self):
