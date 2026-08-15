@@ -17,12 +17,12 @@ class MainPage:
 
     @allure.step('Clicking all recommended filters buttons on main page')
     def click_all_filter_buttons(self):
-        recommended_filters = self.page.query_selector_all(self.recommended_filters_buttons)
-        recommended_filters[0].click()
-        recommended_filters[1].click()
-        recommended_filters[2].click()
-        recommended_filters[3].click()
-        recommended_filters[4].click()
+        recommended = self.page.locator(self.recommended_filters_buttons)
+        recommended.first.wait_for(state="visible", timeout=10000)
+        count = recommended.count()
+        for i in range(count):
+            recommended.nth(i).click()
+            self.page.wait_for_timeout(200)
 
     @allure.step('Click search button')
     def click_search_button(self):
