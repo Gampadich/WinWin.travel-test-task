@@ -1,4 +1,4 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","3027","test_page_url_after_filters[chromium]","tests","2026-08-15","broken","2026-08-15","","WinWin_travel_test","",""
-"","32747","test_max_adults[chromium]","tests","2026-08-15","broken","2026-08-15","","WinWin_travel_test","",""
-"","32806","test_active_pets_checkboxes[chromium]","tests","2026-08-15","broken","2026-08-15","","WinWin_travel_test","",""
+"","3192","test_page_url_after_filters[chromium]","tests","2026-08-15","broken","2026-08-15","","WinWin_travel_test","",""
+"","32834","test_active_pets_checkboxes[chromium]","tests","2026-08-15","broken","2026-08-15","","WinWin_travel_test","",""
+"","4765","test_max_adults[chromium]","tests","2026-08-15","passed","2026-08-15","","WinWin_travel_test","",""
