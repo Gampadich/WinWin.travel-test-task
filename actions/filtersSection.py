@@ -10,8 +10,8 @@ class FiltersSection:
     @allure.step('Clicking see_more_button and pets checkbox button')
     def see_more_and_checkbox_button_click(self):
         self.see_more_button.wait_for(state="visible", timeout=10000)
+        self.see_more_button.scroll_into_view_if_needed()
         self.see_more_button.click()
-        self.pets_checkbox_button.click()
 
     @allure.step('Checking active checkboxes button')
     def active_checkboxes_button_click(self):
