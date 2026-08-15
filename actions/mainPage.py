@@ -19,10 +19,8 @@ class MainPage:
     def click_all_filter_buttons(self):
         recommended = self.page.locator(self.recommended_filters_buttons)
         recommended.first.wait_for(state="visible", timeout=10000)
-        count = recommended.count()
-        for i in range(count):
+        for i in range(5):
             recommended.nth(i).click()
-            self.page.wait_for_timeout(200)
 
     @allure.step('Click search button')
     def click_search_button(self):
