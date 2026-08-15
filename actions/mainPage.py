@@ -13,7 +13,8 @@ class MainPage:
 
     @allure.step('Clicking filters button')
     def filters_button_click(self):
-        return self.filtersButton.click()
+        self.filtersButton.wait_for(state="visible", timeout=10000)
+        self.filtersButton.click()
 
     @allure.step('Clicking all recommended filters buttons on main page')
     def click_all_filter_buttons(self):
