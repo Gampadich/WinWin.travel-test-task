@@ -20,4 +20,5 @@ class FiltersSection:
     @allure.step('Checking active checkboxes button')
     def active_checkboxes_button_click(self):
         self.page.wait_for_timeout(1000)
-        self.page.query_selector_all(self.activeCheckboxesSelector)
+        active_checkboxes = self.page.locator("input[type='checkbox']:checked").all()
+        return active_checkboxes
