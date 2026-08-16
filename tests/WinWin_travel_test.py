@@ -26,7 +26,7 @@ def test_active_pets_checkboxes(url, page):
     mainPage.filters_button_click()
     filtersSection.see_more_and_checkbox_button_click()
     activeCheckboxes = filtersSection.active_checkboxes_button_click()
-    assert len(activeCheckboxes) == 23, f'Checkboxes not active active: {activeCheckboxes}'
+    assert len(activeCheckboxes) == 23, f'Checkboxes not active active: {len(activeCheckboxes)}'
 
 @allure.feature('Main page testing')
 @allure.story('Check page url after filters')
